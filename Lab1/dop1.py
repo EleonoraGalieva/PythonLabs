@@ -1,14 +1,14 @@
-def fibonacci_main(n):
-    if n in (1, 2):
-        return 1
-    if n == 0:
-        return 0
-    return fibonacci_main(n - 1) + fibonacci_main(n - 2)
+def fibonacci_generator(n):
+    a = 0
+    b = 1
+    while n > 0:
+        a, b = b, a + b
+        yield a
+        n -= 1
 
 
 def fibonacci(n):
-    i = 0
-    while i < n:
-        print(fibonacci_main(i))
-        i += 1
+    fib_g = fibonacci_generator(n)
+    for i in fib_g:
+        print(i)
 
