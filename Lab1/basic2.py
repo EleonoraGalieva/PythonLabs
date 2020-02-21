@@ -2,9 +2,7 @@ def the_most_common_words(line):
     d = {}
     new_line = str()
     if line:
-        line = ' '.join(line)
-        words = line.split()
-        for word in words:
+        for word in line:
             if d.get(word):
                 d[word] += 1
             else:

@@ -7,9 +7,9 @@ from dop1 import fibonacci
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--w', dest='words', default='', type=str, help="Write words to count", nargs="+")
-parser.add_argument('--fw', dest='filename12', default='', type=str,
+parser.add_argument('--fw', dest='filename_for_words', default='', type=str,
                     help="Write a name of a .txt file for using the WordCount function")
-parser.add_argument('--fn', dest='filename34', default='', type=str,
+parser.add_argument('--fn', dest='filename_for_nums', default='', type=str,
                     help="Write a name of a .txt file for using functions for sorting")
 parser.add_argument('--nums', dest='nums_list', default=0, type=float, help="Write numbers to sort", nargs='+')
 parser.add_argument('--fib', dest='fibonacci_count', default=0, type=int,
@@ -20,17 +20,18 @@ parser.add_argument('--ms', action='store_true', help="For using the merge sort"
 
 args = parser.parse_args()
 words = list(args.words)
-filename12 = args.filename12
-filename34 = args.filename34
+filename_for_words = args.filename_for_words
+filename_for_nums = args.filename_for_nums
 nums_list = args.nums_list
 fibonacci_count = args.fibonacci_count
 
-if filename12:
-    with open("D:\STUDY\Python\XD\{0}.txt".format(filename12)) as f:
+if filename_for_words:
+    with open("D:\STUDY\Python\XD\{0}.txt".format(filename_for_words)) as f:
         words = f.read().split()
-if filename34:
-    with open("D:\STUDY\Python\XD\{0}.txt".format(filename34)) as f:
+if filename_for_nums:
+    with open("D:\STUDY\Python\XD\{0}.txt".format(filename_for_nums)) as f:
         nums_list = f.read().split()
+        nums_list = list(map(int, nums_list))
 if words:
     word_count(words)
     if args.com:

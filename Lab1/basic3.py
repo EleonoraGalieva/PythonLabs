@@ -1,14 +1,14 @@
 def quicksort_helper(nums, left, right):
     try:
-        middle_num = int(nums[(left + right) // 2])
+        middle_num = nums[(left + right) // 2]
         i = left - 1
         j = right + 1
         while True:
             i += 1
-            while int(nums[i]) < middle_num:
+            while nums[i] < middle_num:
                 i += 1
             j -= 1
-            while int(nums[j]) > middle_num:
+            while nums[j] > middle_num:
                 j -= 1
             if i >= j:
                 return j
