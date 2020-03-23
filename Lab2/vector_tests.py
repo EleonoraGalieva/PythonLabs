@@ -44,5 +44,3 @@ class TestVectorMethods(unittest.TestCase):
             NV1 == NV3
 
 
-if __name__ == '__main__':
-    unittest.main()
